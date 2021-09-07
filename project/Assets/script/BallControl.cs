@@ -32,7 +32,6 @@ public class BallControl : MonoBehaviour
 
     void ResetBall()
     {
-        this.starting = 0;
         // Reset posisi menjadi (0,0)
         transform.position = Vector2.zero;
 
@@ -44,22 +43,20 @@ public class BallControl : MonoBehaviour
     {
         Vector2 newDirect;
 
-        //di push ball yang yrandom di hidden doang kodingnya jadiin comment, trus yang bawahnya hapus randomnya
-
         //starting force
-        if (this.starting > 0) { 
-            float yRandomInitialForce = Random.Range(-yInitialForce, yInitialForce);
+        if (starting <= 0) { 
+            // float yRandomInitialForce = Random.Range(-yInitialForce, yInitialForce);
             // Tentukan nilai acak antara 0 (inklusif) dan 2 (eksklusif)
             float randomDirection = Random.Range(0, 2);
 
             // -1 = kiri 
             if (randomDirection < 1.0f)
-                newDirect = new Vector2(-xInitialForce, yRandomInitialForce);
+                newDirect = new Vector2(-xInitialForce, yInitialForce);
             else
-                newDirect = new Vector2(xInitialForce, yRandomInitialForce);
+                newDirect = new Vector2(xInitialForce, yInitialForce);
 
             //simpen nilai
-            keeper = newDirect;
+            keeper = newDirect; starting++;
         }
         //counter
         else
@@ -79,7 +76,6 @@ public class BallControl : MonoBehaviour
         ResetBall();
         // Setelah 2 detik, berikan gaya ke bola
         Invoke("PushBall", 2);
-        this.starting++;
     }
     // Ketika bola beranjak dari sebuah tumbukan, rekam titik tumbukan tersebut
     private void OnCollisionExit2D(Collision2D collision)
