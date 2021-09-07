@@ -1,2 +1,2 @@
 # pong
-first game
+Aldi Mulia Wijaya
