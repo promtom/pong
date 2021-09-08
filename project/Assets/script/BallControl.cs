@@ -63,11 +63,11 @@ public class BallControl : MonoBehaviour
         {
             float yDirection = Random.Range(-yInitialForce, yInitialForce);
             float xDirection = Random.Range(-xInitialForce, xInitialForce);
-            Vector2 tmpDirect = new Vector2(xDirection, yDirection); // buat arah baru
+            Vector2 tmpDirect = new Vector2(xDirection, -yInitialForce); // buat arah baru
             Vector2 newVel = keeper.magnitude * tmpDirect.normalized; //kecepatan awal dengan arah baru
             newDirect = new Vector2(newVel.x,newVel.y);
         }
-        // Tentukan nilai komponen y dari gaya dorong antara -yInitialForce dan yInitialForce
+
         rigidBody2D.AddForce(newDirect);
     }   
     void RestartGame()

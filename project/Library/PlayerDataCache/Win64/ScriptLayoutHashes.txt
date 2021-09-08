@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-D:/Kerjaan/Kuliah/Kuliah sem 7/New folder/agate-pong.exe
+D:/Kerjaan/Kuliah/Kuliah sem 7/gamenya/agate-pong.exe
 SceneListBegin?
 Assets/Scenes/Pong.unity
 SceneListEnd?
